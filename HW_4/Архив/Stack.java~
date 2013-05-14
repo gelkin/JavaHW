@@ -1,0 +1,9 @@
+public interface Stack extends Copiable {
+    private int size;
+    /*public*/ void push(Object element);
+    /*public*/ Object pop();
+    /*public*/ Object peek();
+    /*public*/ int size();
+    /*public*/ boolean isEmpty();
+    Stack makeCopy();
+}
