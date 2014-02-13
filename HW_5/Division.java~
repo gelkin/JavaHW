@@ -1,9 +1,0 @@
-public class Division extends AbstractBinOper {
-	public Division(Evaluable left, Evaluable right) {
-		super(left, right);
-	}
-	
-	public int apply(int x, int y) {
-		return x / y; 
-	}
-}
