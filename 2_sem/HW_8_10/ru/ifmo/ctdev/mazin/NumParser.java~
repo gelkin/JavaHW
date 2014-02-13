@@ -1,0 +1,7 @@
+package ru.ifmo.ctdev.mazin;
+
+import java.util.Map;
+
+public class NumParser implements Parserable {
+
+}

@@ -1,0 +1,11 @@
+public class OFException extends Exception implements NumException {
+	private str;
+	
+	public OFException(String str) {
+		this.str = str;
+	}
+	
+	public String get() {
+		return str;
+	}
+}

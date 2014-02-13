@@ -1,0 +1,12 @@
+package mazin;
+
+public class Result {
+
+    public Evaluable exp; // Выражение, записанное в "правильном" виде
+    public String rest; // остаток строки, которую мы еще не обработали
+
+    public Result(Evaluable exp, String rest) {
+        this.exp = exp;
+        this.rest = rest;
+    }
+}

@@ -1,0 +1,15 @@
+public enum Const implements Evaluable {
+	CONST {
+		
+	}	
+		
+	private Object value;
+	
+	public Variable(String value) {
+		this.value = value;
+	}
+	
+	public Object evaluate(HashMap<String, Integer> vars) {
+        return vars.get(value);
+	}
+}

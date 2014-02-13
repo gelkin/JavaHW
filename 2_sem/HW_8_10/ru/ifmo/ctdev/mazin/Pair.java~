@@ -1,0 +1,19 @@
+package ru.ifmo.ctdev.mazin;
+
+public class Pair<T> {
+	private T num;
+	private int i;
+	
+	public Pair(T num, int i) {
+		this.num = num;
+		this.i = i;
+	}
+	
+	public T getNum() {
+		return num;
+	}
+	
+	public T getIndex() {
+		return i;
+	}
+}

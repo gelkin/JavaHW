@@ -1,0 +1,71 @@
+// package ru.ifmo.ctddef.mazin;
+
+import java.util.HashMap;
+// import ru.ifmo.ctddef.mazin.*;
+
+public abstract class AbstractBinOper implements Evaluable {
+	private Evaluable left;
+	private Evaluable right;
+	
+	public AbstractBinOper(Evaluable left, Evaluable right) {
+		this.left = left;
+		this.right = right;
+	}
+	
+	public int evaluate(HashMap<String, Integer> vars) {
+		return apply(this.left.evaluate(vars), this.right.evaluate(vars));
+	}
+	
+	protected abstract int apply(int x, int y);
+	
+	public String toString() {
+		return concat(this.left.toString(exp), this.right.toString(exp));
+	}
+	
+	protected abstract String concat(String x, String y);
+	
+	public String instanceofLeft() {		
+		if (this.left instanceof Plus) {
+			return "Plus";
+
+		}
+		if (this.left instanceof Minus) {
+			return "Minus";
+		}
+		if (this.left instanceof Times) {
+			return "Times";
+		}
+		if (this.left instanceof Division) {
+			return "Division";
+		}
+		if (this.left instanceof ByModulo) {
+			return "ByModulo";
+		}
+		if (this.left instanceof Variable) {
+			return "Variable";
+		}
+		return "Const";
+	}
+	
+	public String instanceofRight() {
+		if (this.right instanceof Plus) {
+			return "Plus";
+		}
+		if (this.right instanceof Minus) {
+			return "Minus";
+		}
+		if (this.right instanceof Times) {
+			return "Times";
+		}
+		if (this.right instanceof Division) {
+			return "Division";
+		}
+		if (this.right instanceof ByModulo) {
+			return "ByModulo";
+		}
+		if (this.right instanceof Variable) {
+			return "Variable";
+		}
+		return "Const";
+	}
+}

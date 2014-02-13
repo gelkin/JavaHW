@@ -1,0 +1,15 @@
+package ru.ifmo.ctddef.mazin;
+
+import java.util.HashMap;
+
+public class Variable implements Evaluable{
+	private String var;
+	
+	public Variable(String var) {
+		this.var = var;
+	}
+	
+	public int evaluate(Map<String, Integer> vars) {
+        return vars.get(var);
+	}
+}

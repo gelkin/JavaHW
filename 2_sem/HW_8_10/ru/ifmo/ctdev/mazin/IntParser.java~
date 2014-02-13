@@ -1,0 +1,23 @@
+package ru.ifmo.ctdev.mazin;
+
+public class IntParser extends NumParser<Integer> {
+	
+	Pair<Integer> numParse(String s) {
+		int i = 0;
+        boolean negative = false;
+     
+        if( s.charAt(0) == '-' ){
+            negative = true;
+            s = s.substring(1);
+        }
+        
+        while (i < s.length() && Character.isDigit(s.charAt(i))) {
+            i++;
+        }
+        int part = Integer.parseInt(s.substring(0, i));
+        if( negative ) {
+        	part = -part;
+        }
+        return new Pair(part, i);
+	}
+}

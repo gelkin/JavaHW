@@ -1,0 +1,21 @@
+public enum Operation implements Evaluable {
+    PLUS   { double apply(double x, double y)
+        { return x + y; } },
+    MINUS  { double apply(double x, double y)
+        { return x - y; } },
+    TIMES  { double apply(double x, double y)
+        { return x * y; } },
+    DIVIDE { double apply(double x, double y)
+        { return x / y; } };
+    
+    private Evaluable left;
+	private Evaluable right;
+	
+	abstract int apply(int x, int y);
+	
+	public int evaluate(HashMap<String, Integer> vars) {
+		return apply(this.left.evaluate(vars), this.right.evaluate(vars));
+	}
+
+    abstract double eval(double x, double y);
+}

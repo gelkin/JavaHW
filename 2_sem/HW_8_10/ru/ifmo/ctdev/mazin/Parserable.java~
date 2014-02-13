@@ -1,0 +1,5 @@
+package ru.ifmo.ctdev.mazin;
+
+public interface NumParser<T> {
+	Pair<T> numParse(String s);
+}

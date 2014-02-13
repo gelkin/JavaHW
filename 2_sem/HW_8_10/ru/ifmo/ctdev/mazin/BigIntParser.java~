@@ -1,0 +1,22 @@
+package ru.ifmo.ctdev.mazin;
+
+public class BigIntParser extends NumParser<BigInteger> {
+	Pair<BigInteger> numParse(String s) {
+		int i = 0;
+        boolean negative = false;
+     
+        if( s.charAt(0) == '-' ){
+            negative = true;
+            s = s.substring(1);
+        }
+        while (i < s.length() && Character.isDigit(s.charAt(i))) {
+            i++;
+        }
+        BigInteger part = new BigInteger(s.substring(0, i));
+        if( negative ) {
+        	part = part.negate();
+        }
+        
+        return new Pair(part, i);
+	}
+}

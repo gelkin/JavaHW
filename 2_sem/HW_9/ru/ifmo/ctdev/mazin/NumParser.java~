@@ -1,0 +1,22 @@
+package ru.ifmo.ctdev.mazin;
+
+import java.util.Map;
+
+public class NumParser<T> implements Parserable<T> {
+	protected T num;
+	protected int i;
+	
+	public void numParse(String str) {
+		apply(str);
+	}
+	
+	protected abstract void apply(String str);
+	
+	public T getNum() {
+		return num;
+	}
+	
+	public int getIndex() {
+		return i;
+	}
+}

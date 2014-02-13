@@ -1,0 +1,7 @@
+package ru.ifmo.ctdev.mazin;
+
+import java.util.HashMap;
+
+public interface Evaluable<T> {
+	public int evaluate(HashMap<String, T> vars);
+}

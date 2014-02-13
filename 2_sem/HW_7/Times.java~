@@ -1,0 +1,26 @@
+// package ru.ifmo.ctddef.mazin;
+
+public class Times extends AbstractBinOper {
+	public Times(Evaluable left, Evaluable right) {
+		super(left, right);
+	}
+	
+	protected int apply(int x, int y) {
+		System.out.println("________+++_______");
+		return x * y; 
+	}
+	
+	protected String concat(String x, String y) {
+		System.out.println("________+++_______");
+		if (this.instanceofLeft() == "Plus" || this.instanceofLeft() == "Minus") {
+			if (this.instanceofRight() == "Plus" || this.instanceofRight() == "Minus") {
+				return "(" + x + ")*(" + y + ")";
+			}
+			return "(" + x + ")*" + y;
+		}
+		if (this.instanceofRight() == "Plus" || this.instanceofRight() == "Minus") {
+			return x + "*(" + y + ")";
+		}
+		return x + "*" + y;
+	}
+}
